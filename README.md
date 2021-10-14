@@ -7,7 +7,7 @@ To use it, set the `build-system` table in your `pyproject.toml` to as follows:
 ```toml
 [build-system]
 requires = ["flit_scm"]
-build-backend = "flit_scm.buildapi"
+build-backend = "flit_scm:buildapi"
 ```
 
 Flit and `setuptools_scm` can be configured as normal (refer to their documentation). Example:
@@ -15,7 +15,7 @@ Flit and `setuptools_scm` can be configured as normal (refer to their documentat
 ```toml
 [build-system]
 requires = ["flit_scm"]
-build-backend = "flit_scm.buildapi"
+build-backend = "flit_scm:buildapi"
 
 [tool.flit.sdist]
 exclude = [".gitignore"]
