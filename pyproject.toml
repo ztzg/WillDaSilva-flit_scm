@@ -1,0 +1,43 @@
+[project]
+name = "flit_scm"
+version = "0.0.1" # Not using flit_scm on itself... yet
+description = "A PEP 518 build backend that uses setuptools_scm to generate a version file from your version control system, then flit to build the package."
+readme = "README.md"
+requires-python = ">=3.6"
+license = { file = "LICENSE" }
+authors = [
+    { name = "Will Da Silva", email = "will@willdasilva.xyz" },
+]
+keywords = ["flit", "PEP518", "build", "packaging", "scm"] # max of 5 keywords
+classifiers = [
+    "Development Status :: 2 - Pre-Alpha",
+    "Intended Audience :: Developers",
+    "License :: OSI Approved",
+    "License :: OSI Approved :: MIT License",
+    "Programming Language :: Python",
+    "Topic :: Software Development",
+    "Topic :: Software Development :: Build Tools",
+    "Typing :: Typed",
+]
+dependencies = [
+    "flit-core~=3.4.0",
+    "setuptools_scm~=6.3.2",
+    "toml~=0.10.2"
+]
+
+
+[project.urls]
+homepage = "https://gitlab.com/WillDaSilva/flit_scm"
+documentation = "https://gitlab.com/WillDaSilva/flit_scm"
+repository = "https://gitlab.com/WillDaSilva/flit_scm"
+
+
+[build-system]
+requires = ["flit-core~=3.4.0"]
+build-backend = "flit_core.buildapi"
+
+
+[tool.flit.sdist]
+exclude = [
+    ".gitignore",
+]
