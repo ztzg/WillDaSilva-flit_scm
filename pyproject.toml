@@ -7,7 +7,7 @@ license = { file = "LICENSE" }
 authors = [
     { name = "Will Da Silva", email = "will@willdasilva.xyz" },
 ]
-keywords = ["flit", "PEP518", "build", "packaging", "scm"] # max of 5 keywords
+keywords = ["flit", "pep518", "build", "packaging", "scm"] # max of 5 keywords
 classifiers = [
     "Development Status :: 4 - Beta",
     "Intended Audience :: Developers",
@@ -18,9 +18,9 @@ classifiers = [
     "Topic :: Software Development :: Build Tools",
 ]
 dependencies = [
-    "flit-core~=3.4.0",
-    "setuptools_scm~=6.3.2",
-    "toml~=0.10.2"
+    "flit-core~=3.4",
+    "setuptools_scm~=6.3",
+    "toml~=0.10"
 ]
 dynamic = ["version"]
 
@@ -43,3 +43,4 @@ exclude = [
 
 [tool.setuptools_scm]
 write_to = "flit_scm/_version.py"
+
