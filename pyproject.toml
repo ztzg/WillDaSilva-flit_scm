@@ -18,9 +18,9 @@ classifiers = [
     "Topic :: Software Development :: Build Tools",
 ]
 dependencies = [
-    "flit-core~=3.5",
-    "setuptools_scm~=6.3",
-    "toml~=0.10"
+    "flit-core==3.5.0",
+    "setuptools_scm==6.4.2",
+    "toml==0.10.2",
 ]
 dynamic = ["version"]
 
