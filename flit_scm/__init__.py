@@ -5,5 +5,14 @@ import toml
 from ._version import version as __version__
 
 
-setuptools_scm_config = toml.load('pyproject.toml')['tool']['setuptools_scm']
-get_version(**setuptools_scm_config)
+try:
+    pyproject = toml.load('pyproject.toml')
+except OSError:
+    pass # Do nothing if unable to access `pyproject.toml`
+else:
+    try:
+        setuptools_scm_config = pyproject['tool']['setuptools_scm']
+    except KeyError:
+        pass # Do nothing if `setuptools_scm` is not configured in `pyproject.toml`
+    else:
+        get_version(**setuptools_scm_config)
