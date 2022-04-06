@@ -1,0 +1,40 @@
+---
+workflow:
+  rules:
+    - if: $CI_COMMIT_TAG
+
+
+stages:
+  - build
+  - deploy
+
+
+build:
+  image: python:3.10
+  stage: build
+  before_script:
+    - pip install build==0.7.0
+  script:
+    # No isolation is necessary since we're building inside of a fresh & temporary image.
+    - python -m build --no-isolation
+  artifacts:
+    paths:
+      - dist/*
+    expire_in: 1 day
+
+
+twine:
+  image: python:3.10
+  stage: deploy
+  needs:
+    - build
+  before_script:
+    - pip install twine==4.0.0
+  script:
+    - twine upload --non-interactive --verbose dist/*
+  rules:
+    - when: manual
+      allow_failure: true
+  variables:
+    TWINE_USERNAME: "__token__"
+    TWINE_PASSWORD: "$PYPI_API_TOKEN"
