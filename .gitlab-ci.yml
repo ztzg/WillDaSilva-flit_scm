@@ -15,8 +15,7 @@ build:
   before_script:
     - pip install build==0.7.0
   script:
-    # No isolation is necessary since we're building inside of a fresh & temporary image.
-    - python -m build --no-isolation
+    - python -m build
   artifacts:
     paths:
       - dist/*
