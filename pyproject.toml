@@ -9,7 +9,7 @@ authors = [
 ]
 keywords = ["flit", "pep518", "build", "packaging", "scm"] # max of 5 keywords
 classifiers = [
-    "Development Status :: 4 - Beta",
+    "Development Status :: 5 - Production/Stable",
     "Intended Audience :: Developers",
     "License :: OSI Approved",
     "License :: OSI Approved :: MIT License",
