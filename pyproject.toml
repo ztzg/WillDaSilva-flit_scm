@@ -32,8 +32,13 @@ repository = "https://gitlab.com/WillDaSilva/flit_scm"
 
 
 [build-system]
-requires = ["flit_scm"]
+requires = [
+    "flit-core==3.5.0",
+    "setuptools_scm==6.4.2",
+    "toml==0.10.2",
+]
 build-backend = "flit_scm:buildapi"
+backend-path = ["."]
 
 
 [tool.flit.sdist]
@@ -43,4 +48,3 @@ exclude = [
 
 [tool.setuptools_scm]
 write_to = "flit_scm/_version.py"
-

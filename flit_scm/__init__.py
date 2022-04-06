@@ -2,8 +2,6 @@ from flit_core import buildapi # Make Flit's build backend available as "flit_sc
 from setuptools_scm import get_version
 import toml
 
-from ._version import version as __version__
-
 
 try:
     pyproject = toml.load('pyproject.toml')
@@ -16,3 +14,7 @@ else:
         pass # Do nothing if `setuptools_scm` is not configured in `pyproject.toml`
     else:
         get_version(**setuptools_scm_config)
+
+
+# Import the version after writing the version file, to allow for bootstrapping
+from ._version import version as __version__
