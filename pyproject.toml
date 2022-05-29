@@ -20,7 +20,7 @@ classifiers = [
 dependencies = [
     "flit-core~=3.5",
     "setuptools_scm~=6.4",
-    "tomli~=1.0",
+    "tomli",
 ]
 dynamic = ["version"]
 
