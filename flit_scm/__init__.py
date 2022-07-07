@@ -1,11 +1,15 @@
 from flit_core import buildapi # Make Flit's build backend available as "flit_scm:buildapi"
 from setuptools_scm import get_version
-import tomli
+
+try:
+    import tomllib
+except ImportError:
+    import tomli as tomllib
 
 
 try:
     with open('pyproject.toml', 'rb') as f:
-        pyproject = tomli.load(f)
+        pyproject = tomllib.load(f)
 except OSError:
     pass # Do nothing if unable to access `pyproject.toml`
 else:
