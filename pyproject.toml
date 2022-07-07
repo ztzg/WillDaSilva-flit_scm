@@ -19,7 +19,7 @@ classifiers = [
 ]
 dependencies = [
     "flit-core~=3.5",
-    "setuptools_scm~=6.4",
+    "setuptools_scm>=6.4",
     "tomli; python_version < '3.11'",
 ]
 dynamic = ["version"]
@@ -34,7 +34,7 @@ repository = "https://gitlab.com/WillDaSilva/flit_scm"
 [build-system]
 requires = [
     "flit-core~=3.5",
-    "setuptools_scm~=6.4",
+    "setuptools_scm>=6.4",
     "tomli",
 ]
 build-backend = "flit_scm:buildapi"
